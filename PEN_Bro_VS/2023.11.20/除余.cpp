@@ -61,10 +61,41 @@
 
 // 注释会被替换为空格
 
+         /*数据类型*/
+// char  int,shrot,long    float,double  _Bool
+//  unsigned 无符号
 
+#include <stdbool.h>
+//    int main()
+//{
+//    printf("%zd\n", sizeof(char));//1              //%zd  
+//    printf("%zd\n", sizeof(bool));//2              //0表示假，其他都是真
+//    printf("%zd\n", sizeof(short));//2
+//    printf("%zd\n", sizeof(int));//4
+//    printf("%zd\n", sizeof(long));//4             //有的是8
+//    printf("%zd\n", sizeof(long long));//8
+//    printf("%zd\n", sizeof(float));//4
+//    printf("%zd\n", sizeof(double));//8
+//    printf("%zd\n", sizeof(long double));//8
+//    return 0;
+//}
+//    /*sizeof(可以放变量，也可以放类型)*/
+//
+//   // 字节   bit Byte//字节=八个bit    1KB=1024个Byte     MB...
 
-int main()
+//int main()
+//{
+//	int a = 10;
+//	short s = 4;
+//	printf("%zd\n", sizeof(s = a + 5));//不会算的
+// //zd  专门来给    size_t   这个类型的
+//	printf("s = %d\n", s);
+//
+//	return 0;
+//}
+
+int mian()
 {
-	
-	return 0;
+    ;
+    return 0;
 }
