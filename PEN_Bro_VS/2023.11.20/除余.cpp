@@ -94,8 +94,45 @@
 //	return 0;
 //}
 
-int mian()
+//int mian()
+//{
+//    int a;
+//    printf("s = %u\n", a);
+//    return 0;
+//}
+//%d是有符号的打印
+//%u是无符号的整数       advantage:  max double of signed bit
+
+
+//    for char:  signed char   !=    unsigned char    This decided by compiler
+//    short age
+
+
+
+
+
+//int a    整型   数据类型 创建变量
+
+//int a = 1000;//全局变量,可以不初始化，是0
+//
+//int main()
+//{
+//    int a = 0;//局部 
+//    //先局部，在全局
+//    //全局不能用局部
+//    printf("%d",a);
+//    return 0;
+//}
+
+
+//局部，全局       在栈区，堆区，静态区
+// 
+// 局部变量是放在内存的栈区
+// 全局变量是放在内存的静态区  
+// 堆区是用来动态内存管理的
+
+int main()
 {
-    ;
+    printf("%d\n", strlen("c:\test\121"));
     return 0;
 }
