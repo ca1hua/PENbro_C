@@ -36,7 +36,7 @@ void createHuffmanTree(HuffmanNode huffmanTree[],int n)
 			//找出两个最小权值
 			for (int j = 0; j < i; j++)
 			{
-				if (huffmanTree[j].parent == -1)
+				if (huffmanTree[j].parent == -1 && huffmanTree[j].weight != 0)
 				{
 					if (huffmanTree[j].weight < min1) {
 						min2 = min1;
@@ -51,6 +51,14 @@ void createHuffmanTree(HuffmanNode huffmanTree[],int n)
 
 				}
 			}
+
+			if (huffmanTree[x1].weight > huffmanTree[x2].weight) {
+				int temp = x1;
+				x1 = x2;
+				x2 = temp;
+			}//老是最后一位出错，我直接加一个swap
+
+
 			// 合并两个最小节点
 			huffmanTree[x1].parent = i;
 			huffmanTree[x2].parent = i;
@@ -89,7 +97,7 @@ void createHuffmanTree(HuffmanNode huffmanTree[],int n)
 					  code[top++] = 1; // 右孩子赋值1
 				  }
 				  current = parent;
-				  parent = huffmanTree[parent].parent;//往上面一层
+				  parent = huffmanTree[parent].parent;//往上面一层,继续进行循环
 
 			  }
 			  // 逆序打印编码
