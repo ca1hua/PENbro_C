@@ -1,0 +1,3 @@
+﻿  2.cpp
+D:\鹏哥C语言\PENbro_C\PEN_Bro_Question\bisai111\2.cpp(11,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  bisai111.vcxproj -> D:\鹏哥C语言\PENbro_C\PEN_Bro_Question\bisai111\x64\Debug\bisai111.exe
