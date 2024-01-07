@@ -1,0 +1,11 @@
+﻿  main.cpp
+D:\鹏哥C语言\PENbro_C\PEN_Bro_Question\web_gaujai\main.cpp(30,24): error C2143: 语法错误: 缺少“)”(在“常数”的前面)
+D:\鹏哥C语言\PENbro_C\PEN_Bro_Question\web_gaujai\main.cpp(30,24): error C2143: 语法错误: 缺少“;”(在“常数”的前面)
+D:\鹏哥C语言\PENbro_C\PEN_Bro_Question\web_gaujai\main.cpp(30,24): error C2059: 语法错误:“常数”
+D:\鹏哥C语言\PENbro_C\PEN_Bro_Question\web_gaujai\main.cpp(30,32): error C2059: 语法错误:“)”
+D:\鹏哥C语言\PENbro_C\PEN_Bro_Question\web_gaujai\main.cpp(73,24): error C2143: 语法错误: 缺少“)”(在“常数”的前面)
+D:\鹏哥C语言\PENbro_C\PEN_Bro_Question\web_gaujai\main.cpp(73,24): error C2143: 语法错误: 缺少“;”(在“常数”的前面)
+D:\鹏哥C语言\PENbro_C\PEN_Bro_Question\web_gaujai\main.cpp(73,24): error C2059: 语法错误:“常数”
+D:\鹏哥C语言\PENbro_C\PEN_Bro_Question\web_gaujai\main.cpp(73,32): error C2059: 语法错误:“)”
+D:\鹏哥C语言\PENbro_C\PEN_Bro_Question\web_gaujai\main.cpp(73,34): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+D:\鹏哥C语言\PENbro_C\PEN_Bro_Question\web_gaujai\main.cpp(73,34): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
