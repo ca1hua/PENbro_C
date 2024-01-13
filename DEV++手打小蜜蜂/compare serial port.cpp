@@ -7,15 +7,20 @@ void SelectHC573(unsigned char channel)
 	switch(channel)
 	{
 		case 4:
-			P2 = (P2 & 0x1f) | 0x80;break;
+			P2 = (P2 & 0x1f) | 0x80;
+		break;
 		case 5:
-			P2 = (P2 & 0x1f) | 0xa0;break;
+			P2 = (P2 & 0x1f) | 0xa0;
+		break;
 		case 6:
-			P2 = (P2 & 0x1f) | 0xc0;break;
+			P2 = (P2 & 0x1f) | 0xc0;
+		break;
 		case 7:
-			P2 = (P2 & 0x1f) | 0xe0;break;
-		case 8:
-			P2 = (P2 & 0x1f) | 0x00;break;
+			P2 = (P2 & 0x1f) | 0xe0;
+		break;
+		case 0:
+			P2 = (P2 & 0x1f) | 0x00;
+		break;
 	}
 }
 
@@ -25,10 +30,9 @@ void InitSystem()
 	P0 = 0x00;
 	SelectHC573(4);
 	P0 = 0xff;
-
-	
 }
 
+//=======================================
 void InitUart()
 {
 	TMOD = 0x20;
@@ -38,19 +42,19 @@ void InitUart()
 	
 	SCON = 0x50;
 	AUXR = 0x00;
+	
 	ES = 1;
 	EA = 1;
 }
 
-unsigned char comman = 0x00;
+unsigned char command = 0x00;
 void ServiceUart() interrupt 4
 {
 	if(RI == 1)
 	{
-		comman = SBUF;
+		command = SBUF;
 		RI = 0;
 	}
-	
 }
 
 void SendByte(unsigned char dat)
@@ -67,26 +71,27 @@ void SendString(unsigned char *str)
 		SendByte(*str++);
 	}
 }
-
+//=======================================
 void Working()
 {
-	if(comman != 0x00)
+	if(command != 0x00)
 	{
-		switch(comman & 0xf0)
+		switch(command & 0xf0)
 		{
 			case 0xa0:
-					P0 = (P0 | 0x0f) & (~comman | 0xf0);
-				break;
-				
+				P0 = (P0 | 0x0f) & (~command | 0xf0);
+				command = 0x00;
+			break;
+			
 			case 0xb0:
-				P0 = (P0 | 0xf0) & ((~comman << 4)| 0x0f);
-					comman = 0x00;
-				break;
-				
+				P0 = (P0 | 0xf0) & ((~command << 4)| 0x0f);
+				command = 0x00;
+			break;
+			
 			case 0xc0:
-					SendString("hello world!\r\n");
-					comman = 0x00;
-				break;
+				SendString("The System is Running...\r\n");
+				command = 0x00;
+			break;
 		}
 	}
 }
@@ -95,9 +100,11 @@ void main()
 {
 	InitSystem();
 	InitUart();
-	SendString("hello world!\r\n");
+	SendString("Welcome to XMF system!\r\n");
 	while(1)
 	{
 		Working();
 	}
 }
+
+
